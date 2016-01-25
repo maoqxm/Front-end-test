@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .slide{
+            width:200px;
+            height:100px;
+            background-color:rgb(187, 213, 235);
+            position:relative;
+        }
+        .pointer{
+            position:absolute;
+            right:10px;
+            bottom:10px;
+        }
+        i{
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            background-color:black;
+            display:inline-block;
+            margin-left:5px; /*元素成为inline-block以后会有默认的间距，这是由于标签分隔符有间距引起的。在本示例html结构中将i标签连在一起不会出现这个问题，而如果分行写的话会有问题。*/
+        }
+        .current{
+            background-color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- 图片省略 -->
+        <!-- 以下是指示器 -->
+        <div class="pointer">
+            <i class="current"></i><i></i><i></i>
+        </div>
+    </div>
+</body>
+</html>
