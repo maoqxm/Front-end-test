@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 3</title>
+</head>
+<body>
+    <form action="#">
+        <div>
+            <label for="head">头像</label>
+            <input type="file" id="head">
+        </div>
+        <div>
+            <label for="nickname">昵称</label>
+            <input type="text" id="nickname">
+        </div>
+        <div>
+            <label for="education">学历</label>
+            <select id="education">
+                <option value="0" selected>大专</option>
+                <option value="1">本科</option>
+            </select>
+        </div>
+        <div>
+            <label for="sex">性别</label>
+            <input type="radio" name="sex" id="male" value="0" checked>
+            <label for="male">男</label>
+            <input type="radio" name="sex" id="female" value="1">
+            <label for="female">女</label>
+        </div>
+        <div>
+            <label for="hobby">爱好</label>
+            <input type="checkbox" name="hobby" id="film" value="0" checked>
+            <label for="film">电影</label>
+            <input type="checkbox" name="hobby" id="photography" value="1">
+            <label for="photography">摄影</label>
+            <input type="checkbox" name="hobby" id="music" value="2">
+            <label for="music">音乐</label>
+            <input type="checkbox" name="hobby" id="read" value="3" checked>
+            <label for="read">阅读</label>
+        </div>
+        <div>
+            <label for="signature">签名</label>
+            <textarea name="signature" id="signature" cols="35" rows="4"></textarea>
+        </div>
+        <button type="submit">保存</button>
+    </form>
+</body>
+</html>
