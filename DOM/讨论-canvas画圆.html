@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 画圆</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("myCanvas");
+        var cxt = canvas.getContext("2d");
+        cxt.beginPath();
+        //绘制圆，参数为：x坐标，y坐标，半径，起始角度，结束角度，是否沿逆时针方向。
+        cxt.arc(150, 150, 100, 0, Math.PI*2,true);
+        //设置边框色
+        cxt.strokeStyle = "#4d4e53";
+        //设置填充色
+        cxt.fillStyle = "#6a83ff";
+        //绘制轮廓
+        cxt.stroke();
+        //填充
+        cxt.fill();
+        //关闭绘制路径
+        cxt.closePath();
+    </script>
+</body>
+</html>
