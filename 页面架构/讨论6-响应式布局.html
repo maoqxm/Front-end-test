@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>讨论6-响应式布局</title>
+    <style type="text/css">
+        .body{
+            background-color:grey;
+        }
+        .parent{
+            width:960px;
+            margin:0 auto;
+        }
+        .parent div{
+            height:300px;
+        }
+        .side{
+            float:left;
+            width:300px;
+            background-color:#bef;
+        }
+        .main{
+            width:650px;
+            margin-left:310px;
+            background-color:#feb;
+        }
+        @media screen and (min-width: 400px) and (max-width: 1000px){
+            .parent{
+                width:100%;
+            }
+            .main{
+                width:auto;
+            }
+        }
+        @media screen and (max-width: 400px){
+            .parent{
+                width:100%;
+            }
+            .side{
+                float:none;
+                width:auto;
+            }
+            .main{
+                width:auto;
+                margin:10px 0 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="side"></div>
+        <div class="main"></div>
+    </div>
+</body>
+</html>

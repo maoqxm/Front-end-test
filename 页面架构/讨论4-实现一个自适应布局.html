@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讨论4-实现一个自适应布局</title>
+    <style type="text/css">
+        *{
+            color:white;
+        }
+        .parent{
+            height:100px;
+        }
+        .child{
+            height:100%;
+        }
+        .left{
+            float:left;
+            width:100px;
+            background-color:blue;
+        }
+        .right{
+            float:right;
+            width:100px;
+            background-color:red;
+        }
+        .middle{
+            background-color:green;
+            margin:0 110px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child left">左侧定宽</div>
+        <div class="child right">右侧顶宽</div>
+        <div class="child middle">中间自适应</div>
+    </div>
+</body>
+</html>

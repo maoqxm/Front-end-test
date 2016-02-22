@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装光标操作接口</title>
+</head>
+<body>
+    <input id="input" placeholder="请输入文字" value="fsdfdsfdscvxcvd"></input>
+    <button id="btn">selection</button>
+    <script type="text/javascript">
+    function selection(input,start,end){
+        if (input.setSelectionRange){
+            input.setSelectionRange(start,end);
+            input.focus();
+        }else {
+            var range = input.createTextRange();
+            range.collapse(true);
+            range.moveStart('character',start);
+            range.moveEnd('character',end-start);
+            range.select();
+        }
+    }
+    var handler = function() {
+            selection(input,0,10);
+        }
+        var input=document.getElementById('input');
+        var btn=document.getElementById('btn');
+        btn.addEventListener('click',handler);
+    </script>
+</body>
+</html>

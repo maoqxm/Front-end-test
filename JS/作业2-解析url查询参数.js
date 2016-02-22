@@ -7,3 +7,14 @@ function parseQuery(query){
     return obj;
 };
 
+//正则匹配
+var parseQuery = function(query){
+    var reg = /([^=&\s]+)[=\s]*([^=&\s]*)/g;
+    var obj = {};
+    while(reg.exec(query)){
+        obj[RegExp.$1] = RegExp.$2;
+    }
+    return obj;
+}
+var jerry = parseQuery("name=jerry&age=1");
+var tom = parseQuery("name= tom &age=12&gender&");

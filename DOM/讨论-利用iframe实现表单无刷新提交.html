@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无刷新表单提交</title>
+    <style>
+    .f-hidden {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <iframe name="targetFrame" class="f-hidden"></iframe>
+    <form action="./api" method="post" target="targetFrame">
+        <input type="text" name="a">
+        <input type="text" name="b">
+        <input type="text" name="c">
+        <button>submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讨论2-实现一个幻灯片布局</title>
+    <style type="text/css">
+        .slide{
+            position:relative;
+            width:500px;
+            height:100px;
+            background-color:#abc;
+        }
+        .pointer{
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            transform:translateX(-50%);
+            margin:0 auto;
+        }
+        i{
+            display:inline-block;
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            background-color:black;
+        }
+        i + i{
+            margin-left:5px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide">
+    <!-- 图片省略 -->
+    <!-- 以下是指示器 -->
+    <div class="pointer"><i></i><i></i><i></i></div>
+</div>
+</body>
+</html>

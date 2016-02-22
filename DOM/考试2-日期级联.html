@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期级联</title>
+</head>
+<body>
+        <select name="year" id="year">
+        <option value="0">--</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+    </select>年
+    <select name="month" id="month">
+        <option value="0">--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>月
+    <select name="date" id="date">
+        <option value="0">--</option>
+    </select>日
+
+    <script type="text/javascript">
+    //事件绑定兼容
+    function addEvent(obj,e,callback){
+        if(obj.addEventListener){
+            obj.addEventListener(e,callback,false);
+        }else{
+            obj.attachEvent('on'+e,callback);
+        }
+    }
+    //页面加载完成后开始监听
+    addEvent(window,'load',function(){
+        //获取对象
+        var mYear = document.getElementById('year'),
+            mMonth = document.getElementById('month'),
+            mDate = document.getElementById('date');
+        //获取当前月份对应天数
+        function getDays(year,month){
+            return new Date(year,month,0).getDate();
+        }
+        //增加“天”的选项
+        function addDays(obj,index){
+            if (obj.options[index].selected){
+                mDate.options.length = 1; //年月变化后，日期重置
+                if (index == 0){ //年份选在---时，月份默认为---
+                    if (obj.id == 'year'){
+                        mMonth.options[0].selected = true;
+                    }
+                    return;
+                }
+                var year = mYear.options[mYear.selectedIndex].value;
+                //if (year == 0) return;
+                var month = mMonth.options[mMonth.selectedIndex].value;
+                if (month == 0) return;
+                var date = getDays(year,month);
+                //添加日期数据
+                for (var j=1; j<=date; j++){
+                    var opt = document.createElement('option');
+                    opt.appendChild(document.createTextNode(j));
+                    opt.setAttribute('value',j);
+                    mDate.appendChild(opt);
+                }
+            }
+        }
+        //监听年变化
+        addEvent(mYear,'change',function(){
+            for (var i=0; i<=3; i++){
+                addDays(this,i);
+            }
+        });
+        //监听月变化
+        addEvent(mMonth,'change',function(){
+            for (var i=0; i<=12; i++){
+                addDays(this,i);
+            }
+        });
+
+    });
+
+    </script>
+
+</body>
+</html>
