@@ -18,3 +18,20 @@ var parseQuery = function(query){
 }
 var jerry = parseQuery("name=jerry&age=1");
 var tom = parseQuery("name= tom &age=12&gender&");
+
+//JSON
+function parseQuery(query){
+    var a=query.split("&");
+    var leng=a.length;
+    if(!a[a.length-1]){
+        leng--;
+    }
+    var b=[];
+    for(var i=0;i<leng;i++){
+        b[i]=s1(a[i]);
+    }
+    return JSON.parse("{"+b.toString()+"}");
+}
+function s1(str){
+    return str.replace(/([^=]+)=?(.*)/, '"\$1"\:\"$2\"');
+}
