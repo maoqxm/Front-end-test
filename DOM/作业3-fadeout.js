@@ -8,5 +8,5 @@ function fadeout(element){
             clearInterval(timer);
             element.style.display = 'none';
         }
-    },1000)
+    },10)
 }
